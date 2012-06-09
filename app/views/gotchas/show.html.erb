@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Content:</b>
+  <%= @gotcha.content %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @gotcha.tags %>
+</p>
+
+
+<%= link_to 'Edit', edit_gotcha_path(@gotcha) %> |
+<%= link_to 'Back', gotchas_path %>
