@@ -1,11 +1,16 @@
 <div id="content">
+<% if notice %>
+<div class="alert alert-success">
+  <a class="close" data-dismiss="alert" href="#">×</a>
+  <%= notice %>
+</div>
+<% end %>
 
-<h1>New gotcha?</h1>
 <%= render 'form' %>
 
 <h1>Listing gotchas</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <tr>
     <th>Content</th>
     <th>Tags</th>

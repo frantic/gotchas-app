@@ -77,7 +77,7 @@ class GotchasController < ApplicationController
     @gotcha.destroy
 
     respond_to do |format|
-      format.html { redirect_to gotchas_url }
+      format.html { redirect_to gotchas_url, notice: 'Gotcha was successfully removed.' }
       format.json { head :no_content }
     end
   end
