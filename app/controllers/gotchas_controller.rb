@@ -3,6 +3,7 @@ class GotchasController < ApplicationController
   # GET /gotchas.json
   def index
     @gotchas = Gotcha.all
+    @gotcha = Gotcha.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,7 @@ class GotchasController < ApplicationController
 
     respond_to do |format|
       if @gotcha.save
-        format.html { redirect_to @gotcha, notice: 'Gotcha was successfully created.' }
+        format.html { redirect_to gotchas_url, notice: 'Gotcha was successfully created.' }
         format.json { render json: @gotcha, status: :created, location: @gotcha }
       else
         format.html { render action: "new" }
