@@ -5,35 +5,32 @@
 </div>
 <% end %>
 
-<%= render 'form' %>
-
-<h1>Listing gotchas</h1>
-
-<div class="row-fluid">
-  <div class="span6">6</div>
-  <div class="span6">6</div>
+<div class="page-header">
+  <h1>
+    Gotchas
+    <small>This is place where <a href="http://frantic.im">I</a> store all gotchas I come across when craftig software</small> <a href="#"><i class="icon-lock pull-right"></i></a>
+  </h1>
 </div>
 
-<table class="table table-striped table-bordered">
-  <tr>
-    <th>Content</th>
-    <th>Tags</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @is_admin %>
+  <%= render 'form' %>
+<% end %>
 
 <% @gotchas.each do |gotcha| %>
-  <tr>
-    <td><%= gotcha.content %></td>
-    <td><%= gotcha.tags %></td>
-    <td><%= link_to 'Show', gotcha %></td>
-    <td><%= link_to 'Edit', edit_gotcha_path(gotcha) %></td>
-    <td><%= link_to 'Destroy', gotcha, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="gotchas">
+    <p class="lead"><%= gotcha.content %></p>
+    <small>
+      <% gotcha.tags.split.each do |tag| %> 
+        <a href="#"><span class="label label-info"><%= tag %></span></a>
+      <% end %>
+      <% if @is_admin %>
+        <a href="<%= edit_gotcha_path(gotcha) %>">
+          <span class="label label-warning">Edit</span>
+        </a>
+        <a href="<%= gotcha_path(gotcha) %>" data-confirm="rlly?" data-method="delete" rel="nofollow">
+          <span class="label label-important">Delete</span>
+        </a>
+      <% end %>
+    </small>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Gotcha', new_gotcha_path %>

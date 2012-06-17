@@ -4,6 +4,7 @@ class GotchasController < ApplicationController
   def index
     @gotchas = Gotcha.all
     @gotcha = Gotcha.new
+    @is_admin = true
 
     respond_to do |format|
       format.html # index.html.erb
