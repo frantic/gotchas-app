@@ -2,11 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#content {
-  margin: 20px auto;
-  width: 700px;
+body {
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
 
-  textarea {
-    width: 100%;
-  }
+.full-width {
+  width: 100%;
 }

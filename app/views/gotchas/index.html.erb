@@ -1,4 +1,3 @@
-<div id="content">
 <% if notice %>
 <div class="alert alert-success">
   <a class="close" data-dismiss="alert" href="#">×</a>
@@ -9,6 +8,11 @@
 <%= render 'form' %>
 
 <h1>Listing gotchas</h1>
+
+<div class="row-fluid">
+  <div class="span6">6</div>
+  <div class="span6">6</div>
+</div>
 
 <table class="table table-striped table-bordered">
   <tr>
@@ -33,4 +37,3 @@
 <br />
 
 <%= link_to 'New Gotcha', new_gotcha_path %>
-</div>

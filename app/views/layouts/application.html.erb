@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
   <title>ProgrammingGotchas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">Programming gotchas</a>
+      <ul class="nav pull-right">
+        <li><a href="#"><i class="icon-lock icon-white2"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <%= yield %>
+
+  <div><a href="#"><i class="icon-lock icon-white2"></i></a></div>
+</div>
 
 </body>
 </html>
