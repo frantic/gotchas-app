@@ -8,8 +8,20 @@
 <div class="page-header">
   <h1>
     Gotchas
-    <small>This is place where <a href="http://frantic.im">I</a> store all gotchas I come across when craftig software</small> <a href="#"><i class="icon-lock pull-right"></i></a>
+    <small>This is place where <a href="http://frantic.im">I</a> store all gotchas I come across when craftig software</small>
+    <a data-toggle="modal" href="#auth"><i class="icon-lock pull-right opaque-icon"></i></a>
   </h1>
+</div>
+
+<div class="modal hide fade" id="auth">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Members area</h3>
+  </div>
+  <form class="modal-body no-margins" action="">
+      <input type="password" class="no-margins" placeholder="Password required" />
+      <input type="submit" class="btn btn-primary" value="Login" />
+  </form>
 </div>
 
 <% if @is_admin %>
